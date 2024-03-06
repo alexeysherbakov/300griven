@@ -55,6 +55,15 @@ namespace _300griven
                 Otjim2();
                 label1.Text = $"Отжимается.. {i} раз";
                 await Task.Delay(300);
+                if (i==7)
+                {
+                    Dcp();
+                    label1.Text = "";
+                    await Task.Delay(400);
+                    label1.Text = "- Та у него просто дцп...";
+                    await Task.Delay(3000);
+                    label1.Text = "";
+                }
             }
             await Task.Delay(400);
             Otjim();
@@ -110,6 +119,12 @@ namespace _300griven
 
         void Neutral()
         {
+            pictureBox1.BackgroundImage = Resources.neutral2;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        void Neutral2()
+        {
             pictureBox1.BackgroundImage = Resources.main;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
         }
@@ -132,5 +147,26 @@ namespace _300griven
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
+        void Dcp()
+        {
+            pictureBox1.BackgroundImage = Resources.dcp;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        void Vlad()
+        {
+            pictureBox1.BackgroundImage = Resources.vlad;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        //private void button1_MouseHover(object sender, EventArgs e)
+        //{
+        //    Neutral();
+        //}
+
+        //private void button1_MouseLeave(object sender, EventArgs e)
+        //{
+        //    Neutral2();
+        //}
     }
 }
